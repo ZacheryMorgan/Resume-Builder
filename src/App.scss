@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  .main-left {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    .experience-forms {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .experience-form-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        button {
+          width: 100px;
+          align-self: flex-end;
+        }
+      }
+
+      #addJob {
+        align-self: center;
+        width: 130px;
+      }
+    }
+  }
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
