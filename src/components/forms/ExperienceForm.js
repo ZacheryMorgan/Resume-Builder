@@ -25,7 +25,8 @@ export default function ExperienceForm({data, index, onChange, addInput, id, rem
         <div className="experience-form-wrapper">
             <form className='experience-form'>
                 <input required type="text" name="job" id="experience" placeholder='Job Name' onChange={(e) => onChange(e, id)} value={data.job} />
-                <input required type="date" name="date" id="experience" placeholder='Date' onChange={(e) => onChange(e, id)} value={data.date} />
+                <input required type="date" name="startDate" id="experience" placeholder='Start Date' onChange={(e) => onChange(e, id)} value={data.startDate} />
+                <input required type="date" name="endDate" id="experience" placeholder='End Date' onChange={(e) => onChange(e, id)} value={data.endDate} />
                 <input required type="text" name="description" id="experience" placeholder='Description' onChange={(e) => onChange(e, id)} value={data.description} />
                 {dutiesElements}
                 <button className="add-duty" onClick={(e) => addInput(e, data.id)} id="addDuty">Add Duty</button>

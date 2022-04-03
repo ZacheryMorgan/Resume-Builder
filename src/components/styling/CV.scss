@@ -1,7 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.print {}
+
 .cv {
     height: 100vh;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    padding: 35px;
+
+    .cv-left-wrapper {
+        display: flex;
+        border-right: 2px solid #dfe1e1;
+        padding-right: 15px;
+        width: 200px;
+
+
+        .cv-left {
+            max-height: 50%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-self: center;
+
+            ul {
+                list-style-type: none;
+            }
+
+            .contact-section {
+                font-size: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .contact {
+                    margin-bottom: 10px;
+                    letter-spacing: 2px;
+                    font-size: 1rem;
+                }
+
+                .phone-number {}
+
+                .address {}
+
+                .email {}
+
+                .website {}
+            }
+
+            .technical-skills-wrapper {
+                font-size: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .list-title {
+                    margin-bottom: 10px;
+                    letter-spacing: 2px;
+                    font-size: 1rem;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+            }
+
+            .personal-skills-wrapper {
+                font-size: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .list-title {
+                    margin-bottom: 10px;
+                    letter-spacing: 2px;
+                    font-size: 1rem;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+            }
+        }
+    }
+
+    .cv-right-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 10px 10px 10px 50px;
+
+        .cv-right {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            header {
+                padding-bottom: 30px;
+                border-bottom: 3px solid #dfe1e1;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                h3 {
+                    letter-spacing: 2px;
+                }
+
+                .name {
+                    font-size: 2.5rem;
+                    letter-spacing: 2.5px;
+                }
+
+                .title {
+                    margin-bottom: 16px;
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                    letter-spacing: 2px;
+                }
+
+                .about {
+                    margin-bottom: 6px;
+                }
+
+                .header-description {
+                    line-height: 1.3;
+                }
+            }
+
+            .experience-wrapper {
+                padding-top: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding-bottom: 30px;
+                border-bottom: 3px solid #dfe1e1;
+
+                h3 {
+                    letter-spacing: 2px;
+                    margin-bottom: -18px;
+                }
+
+                .experience {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .job {
+                        font-size: 1.1rem;
+                        letter-spacing: .5px;
+                    }
+
+                    .job-info {
+                        display: flex;
+                        gap: 12px;
+                    }
+
+                    .duty-list {
+                        padding-left: 50px;
+                    }
+
+                    .dates {
+                        color: rgb(90, 88, 88);
+                    }
+                }
+            }
+
+            .education-wrapper {
+                padding-top: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding-bottom: 30px;
+                border-bottom: 3px solid #dfe1e1;
+
+
+                h3 {
+                    letter-spacing: 2px;
+                    margin-bottom: -18px;
+                }
+
+                .education {
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+
+
+                    .school-info {
+                        display: flex;
+                        gap: 12px;
+                        align-items: center;
+
+                        .school-name {
+                            font-size: 1.1rem;
+                        }
+
+                        .attended {
+                            color: rgb(90, 88, 88);
+                        }
+                    }
+                }
+            }
+
+            .accomplishments-wrapper {
+                padding-top: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .accomplishments-title {
+                    letter-spacing: 2px;
+                    margin-bottom: -18px;
+                }
+
+                .accomplishments-list {
+                    padding-left: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+
+            }
+        }
+    }
 }

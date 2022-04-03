@@ -53,7 +53,7 @@ export default function Form({ handlePrint, contactInfo, headerInfo, experienceI
     })
     return (
         <div className="main-left">
-            <button onClick={handlePrint} ></button>
+            <button className="print" onClick={handlePrint} >Save PDF</button>
             <HeaderForm handleChange={onChange} data={headerInfo} />
             <div className="contact-forms">
                 <ContactForm onChange={onChange} data={contactInfo} />

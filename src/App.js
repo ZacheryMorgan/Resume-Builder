@@ -19,7 +19,7 @@ function App() {
 
   const [contactInfo, setContactInfo] = React.useState({
     location: 'Wilmington, NC',
-    phone: '(336) 112 3541',
+    phone: '(123) 123-1234',
     email: 'johndoe@gmail.com',
     website: 'JohnDoe.github.com'
   })
@@ -28,14 +28,16 @@ function App() {
     {
       id: nanoid(),
       job: 'Google',
-      date: '1992-01-12',
+      startDate: '2022-01-01',
+      endDate: '2022-01-02',
       description: 'Supervisor',
       duties: ['Lorem ipsum dolor sit amet consectetur.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.']
     },
     {
       id: nanoid(),
       job: 'Amazon',
-      date: '1992-01-12',
+      startDate: '2022-02-01',
+      endDate: '2022-02-01',
       description: 'Water Boy',
       duties: ['Lorem ipsum dolor sit amet consectetur.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.']
     }
@@ -48,7 +50,15 @@ function App() {
     },
     {
       id: nanoid(),
-      skill: 'HTML5'
+      skill: 'HTML'
+    },
+    {
+      id: nanoid(),
+      skill: 'Javascript'
+    },
+    {
+      id: nanoid(),
+      skill: 'CSS'
     }
   ])
 
@@ -56,16 +66,20 @@ function App() {
     {
       id: nanoid(),
       school: 'Berkley University',
-      startDate: '2000-01-12',
-      endDate: '2004-01-12',
-      degree: 'Graphic Design'
+      startDate: 2004,
+      endDate: 2008,
+      degree: 'Bachelor of Arts in Business Communication'
     }
   ])
 
   const [accomplishmentsInfo, setAccomplishmentsInfo] = React.useState([
     {
       id: nanoid(),
-      accomplishment: '1,000+ Stars on Github'
+      accomplishment: 'Over 1k Stars on Github'
+    },
+    {
+      id: nanoid(),
+      accomplishment: 'Over 15k downloads'
     }
   ])
 
@@ -77,6 +91,14 @@ function App() {
     {
       id: nanoid(),
       skill: 'Organized'
+    },
+    {
+      id: nanoid(),
+      skill: 'Driven'
+    },
+    {
+      id: nanoid(),
+      skill: 'Task Oriented'
     }
   ])
 
@@ -159,7 +181,8 @@ function App() {
         return [...prev, {
           id: nanoid(),
           job: 'Apple',
-          date: '1992-01-12',
+          startDate: '2022-03-01',
+          endDate: '2022-03-02',
           description: 'Water Man',
           duties: ['Lorem ipsum dolor sit amet consectetur.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.']
         }]
@@ -193,17 +216,17 @@ function App() {
       setEducationInfo(prev => {
         return [...prev, {
           id: nanoid(),
-          school: 'Berkley University',
-          startDate: '2000-01-12',
-          endDate: '2004-01-12',
-          degree: 'Graphic Design'
+          school: 'West High School',
+          startDate: 2000,
+          endDate: 2004,
+          degree: 'Tech Sciences Pathway'
         }]
       })
     } else if (e.target.id === 'addAccomplishment') {
       setAccomplishmentsInfo(prev => {
         return [...prev, {
           id: nanoid(),
-          accomplishment: 'Award for winning'
+          accomplishment: 'Awarded most likely to have a good looking resume'
         }]
       })
     }
