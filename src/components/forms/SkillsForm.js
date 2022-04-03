@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function SkillsForm(props) {
+export default function SkillsForm({onChange, data, removeInput, index}) {
     return (
         <div className="skills-form-wrapper">
             <form action="" className="skills-form">
-                <input placeholder="Skill" type="text" name="skill" id="skills" onChange={(e) => props.onChange(e, props.data.id)} value={props.data.skill}/>
+                <input placeholder="Skill" type="text" name="skill" id="skills" onChange={(e) => onChange(e, data.id)} value={data.skill}/>
             </form>
-            <button className="remove-skill" onClick={(e) => props.removeSkill(e, props.data.id)} id="remove-skill">Remove Skill</button>
+            <button className="remove-skill" onClick={(e) => removeInput(e, data.id, index)} id="remove-skill">Remove Skill</button>
         </div>
     )
 }

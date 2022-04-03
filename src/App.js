@@ -1,25 +1,19 @@
 import React, { useRef } from 'react';
 import './App.scss';
-import ExperienceForm from './components/forms/ExperienceForm';
 import { nanoid } from 'nanoid'
-import SkillsForm from './components/forms/SkillsForm';
 import { useReactToPrint } from 'react-to-print'
 import CV from './components/CV';
-import EducationForm from './components/forms/EducationForm';
-import AccomplishmentForm from './components/forms/AccomplishmentForm';
-import HeaderForm from './components/forms/HeaderForm';
-import PersonalSkillsForm from './components/forms/PersonalSkillsForm';
-import ContactForm from './components/forms/ContactForm';
 
+import Form from './components/Form';
+
+// ----------- Change date to startDate and endDate for Experience -----------
 
 function App() {
 
 
   const [headerInfo, setHeaderInfo] = React.useState({
     name: 'John Doe',
-    email: 'johndoe@gmail.com',
-    phone: '(336) 112 3541',
-    address: '100 Lord St',
+    title: 'Web Developer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione deserunt rerum expedita officia eaque et non perferendis debitis tempore laboriosam, cupiditate repellendus consectetur blanditiis aut possimus alias! Asperiores, officia hic!'
   })
 
@@ -33,35 +27,28 @@ function App() {
   const [experienceInfo, setExperienceInfo] = React.useState([
     {
       id: nanoid(),
-      job: 'Walmart',
+      job: 'Google',
       date: '1992-01-12',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi asperiores dicta ipsa suscipit. Recusandae, ut fugiat. Labore dignissimos fugiat quam?',
-      duties: ['duty1', 'duty2']
+      description: 'Supervisor',
+      duties: ['Lorem ipsum dolor sit amet consectetur.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.']
     },
     {
       id: nanoid(),
-      job: 'Walmart',
+      job: 'Amazon',
       date: '1992-01-12',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi asperiores dicta ipsa suscipit. Recusandae, ut fugiat. Labore dignissimos fugiat quam?',
-      duties: ['duty3', 'duty4']
+      description: 'Water Boy',
+      duties: ['Lorem ipsum dolor sit amet consectetur.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.']
     }
-  ])
-
-  const [jobDutiesInfo, setJobDutiesInfo] = React.useState([
-    {
-      id: nanoid(),
-      duties: ['duty1', 'duty2']
-    },
-    {
-      id: nanoid(),
-      duties: ['duty3', 'duty4']
-    },
   ])
 
   const [skillsInfo, setSkillsInfo] = React.useState([
     {
       id: nanoid(),
       skill: 'React'
+    },
+    {
+      id: nanoid(),
+      skill: 'HTML5'
     }
   ])
 
@@ -69,8 +56,8 @@ function App() {
     {
       id: nanoid(),
       school: 'Berkley University',
-      startDate: '2000-1-12',
-      endDate: '2004-1-12',
+      startDate: '2000-01-12',
+      endDate: '2004-01-12',
       degree: 'Graphic Design'
     }
   ])
@@ -78,7 +65,7 @@ function App() {
   const [accomplishmentsInfo, setAccomplishmentsInfo] = React.useState([
     {
       id: nanoid(),
-      accomplishment: 'Award for winning'
+      accomplishment: '1,000+ Stars on Github'
     }
   ])
 
@@ -86,12 +73,15 @@ function App() {
     {
       id: nanoid(),
       skill: 'Creative'
+    },
+    {
+      id: nanoid(),
+      skill: 'Organized'
     }
   ])
 
+  // Edits state based on the e.target.id, state id, and map index. 
   function handleChange(e, id, index) {
-    console.log(experienceInfo);
-    console.log(id);
     e.preventDefault()
     e.stopPropagation()
     const { name, value } = e.target
@@ -159,6 +149,8 @@ function App() {
       })
     }
   }
+
+  // Adds an item to state based on e.target.id, state id.
   function addInput(e, id) {
     e.preventDefault()
     console.log(experienceInfo);
@@ -166,10 +158,10 @@ function App() {
       setExperienceInfo(prev => {
         return [...prev, {
           id: nanoid(),
-          job: 'Walmart',
+          job: 'Apple',
           date: '1992-01-12',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi asperiores dicta ipsa suscipit. Recusandae, ut fugiat. Labore dignissimos fugiat quam?',
-          duties: ['duty1', 'duty2']
+          description: 'Water Man',
+          duties: ['Lorem ipsum dolor sit amet consectetur.', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.']
         }]
       })
     } else if (e.target.id === 'addDuty') {
@@ -202,8 +194,8 @@ function App() {
         return [...prev, {
           id: nanoid(),
           school: 'Berkley University',
-          startDate: '2000-1-12',
-          endDate: '2004-1-12',
+          startDate: '2000-01-12',
+          endDate: '2004-01-12',
           degree: 'Graphic Design'
         }]
       })
@@ -217,49 +209,40 @@ function App() {
     }
   }
 
+  // Removes item from state based on e.target.id, states id, and map index.
   function removeInput(e, id, index) {
     e.preventDefault()
     if (e.target.id === 'remove-job') {
       setExperienceInfo(prev => {
-        return prev.map(experience => {
-          return experience.id === id ?
-            prev.splice(prev.indexOf(experience), 1) :
-            experience
-        })
+        const newArr = prev.slice()
+        newArr.splice(index, 1)
+        return newArr
       })
     } else if (e.target.id === 'remove-skill') {
       setSkillsInfo(prev => {
-        return prev.map(skill => {
-          return skill.id === id ?
-            prev.splice(prev.indexOf(skill), 1) :
-            skill
-        })
+        const newArr = prev.slice()
+        newArr.splice(index, 1)
+        return newArr
       })
     } else if (e.target.id === 'remove-personal-skill') {
       setPersonalSkillsInfo(prev => {
-        return prev.map(skill => {
-          return skill.id === id ?
-            prev.splice(prev.indexOf(skill), 1) :
-            skill
-        })
+        const newArr = prev.slice()
+        newArr.splice(index, 1)
+        return newArr
       })
     } else if (e.target.id === 'remove-education') {
       setEducationInfo(prev => {
-        return prev.map(education => {
-          return education.id === id ?
-            prev.splice(prev.indexOf(education), 1) :
-            education
-        })
+        const newArr = prev.slice()
+        newArr.splice(index, 1)
+        return newArr
       })
     } else if (e.target.id === 'remove-accomplishment') {
       setAccomplishmentsInfo(prev => {
-        return prev.map(accomplishment => {
-          return accomplishment.id === id ?
-            prev.splice(prev.indexOf(accomplishment), 1) :
-            accomplishment
-        })
+        const newArr = prev.slice()
+        newArr.splice(index, 1)
+        return newArr
       })
-    }else if (e.target.id === 'remove-duty') {
+    } else if (e.target.id === 'remove-duty') {
       setExperienceInfo(prev => {
         return prev.map(experience => {
           if (experience.id === id) {
@@ -275,44 +258,7 @@ function App() {
 
 
 
-  const experienceFormElements = experienceInfo.map((experience, index) => {
-    return <ExperienceForm
-      key={experience.id}
-      data={experience}
-      index={index}
-      onChange={handleChange}
-      addJob={addInput}
-      id={experience.id}
-      removeJob={removeInput} />
-  })
-  const skillsFormElements = skillsInfo.map(skill => {
-    return <SkillsForm
-      onChange={handleChange}
-      data={skill}
-      key={skill.id}
-      removeSkill={removeInput} />
-  })
-  const educationFormElements = educationInfo.map(education => {
-    return <EducationForm
-      onChange={handleChange}
-      data={education}
-      key={education.id}
-      removeEducation={removeInput} />
-  })
-  const accomplishmentFormElements = accomplishmentsInfo.map(accomplishment => {
-    return <AccomplishmentForm
-      onChange={handleChange}
-      data={accomplishment}
-      key={accomplishment}
-      removeAccomplishment={removeInput} />
-  })
-  const personalSkillsFormElements = personalSkillsInfo.map(skill => {
-    return <PersonalSkillsForm
-      onChange={handleChange}
-      data={skill}
-      key={skill}
-      removeSkill={removeInput} />
-  })
+
 
   const componentRef = useRef()
 
@@ -320,38 +266,23 @@ function App() {
 
   return (
     <div className="App">
-      <div className="main-left">
-        <button onClick={handlePrint} ></button>
-        <HeaderForm handleChange={handleChange} data={headerInfo} />
-        <div className="contact-forms">
-          <ContactForm onChange={handleChange} data={contactInfo} />
-        </div>
-        <div className="experience-forms">
-          {experienceFormElements}
-          <button onClick={addInput} id='addJob'>Add Job</button>
-        </div>
-        <div className="skills-forms">
-          {skillsFormElements}
-          <button onClick={addInput} id='addSkill'>Add Skill</button>
-        </div>
-        <div className="education-forms">
-          {educationFormElements}
-          <button onClick={addInput} id='addEducation'>Add School</button>
-        </div>
-        <div className="accomplishment-forms">
-          {accomplishmentFormElements}
-          <button onClick={addInput} id='addAccomplishment'>Add Accomplishment</button>
-        </div>
-        <div className="personal-skills-forms">
-          {personalSkillsFormElements}
-          <button onClick={addInput} id='addPersonalSkill'>Add Personal Skill</button>
-        </div>
+      <Form
+        handlePrint={handlePrint}
+        headerInfo={headerInfo}
+        contactInfo={contactInfo}
+        experienceInfo={experienceInfo}
+        skillsInfo={skillsInfo}
+        educationInfo={educationInfo}
+        accomplishmentsInfo={accomplishmentsInfo}
+        personalSkillsInfo={personalSkillsInfo}
+        onChange={handleChange}
+        removeInput={removeInput}
+        addInput={addInput}
+      />
 
-      </div>
       <CV
         headerInfo={headerInfo}
         experienceInfo={experienceInfo}
-        jobDutiesInfo={jobDutiesInfo}
         skillsInfo={skillsInfo}
         educationInfo={educationInfo}
         accomplishmentsInfo={accomplishmentsInfo}
