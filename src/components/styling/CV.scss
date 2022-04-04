@@ -1,24 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Fira Sans', sans-serif;
 }
 
-.print {}
+.main-left {
+    * {
+        font-family: inherit;
+    }
+}
+
+.print {
+    margin-top: 3px;
+    border: 2px solid #787979;
+    background-color: transparent;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 1rem;
+
+    &:hover {
+        background-color: #787979;
+        color: white;
+    }
+
+    &:active {
+        transform: translate(1px, 1px);
+    }
+}
+
+
+.remove {
+    width: 10px;
+}
+
 
 .cv {
+    // font-family: 'Roboto';
     height: 100vh;
     display: flex;
-    padding: 35px;
+    padding: 35px 25px 25px 25px;
 
     .cv-left-wrapper {
         display: flex;
         border-right: 2px solid #dfe1e1;
-        padding-right: 15px;
-        width: 200px;
+        padding-right: 18px;
 
 
         .cv-left {
@@ -97,7 +129,7 @@
     .cv-right-wrapper {
         display: flex;
         align-items: center;
-        padding: 10px 10px 10px 50px;
+        padding: 10px 10px 10px 18px;
 
         .cv-right {
             height: 100%;
@@ -232,5 +264,347 @@
 
             }
         }
+    }
+}
+
+input {
+    border: 2px solid #787979;
+    padding: 3px;
+    border-radius: 3px;
+    min-width: 100px;
+}
+
+.main-left {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10px 15px 10px 15px;
+
+    select {
+        border: 2px solid #787979;
+        border-radius: 3px;
+        font-size: .8rem;
+    }
+
+    .header-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 3px;
+
+        input {
+            // min-width: 100px;
+            // border: 2px solid #787979;
+            // padding: 3px;
+            // border-radius: 3px;
+        }
+
+        .description {
+            grid-column-start: -3;
+            grid-column-end: -1;
+        }
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 3px;
+    }
+
+    .experience-forms {
+
+        .add-job {
+            margin-top: -20px;
+            border: 2px solid #787979;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: #787979;
+                color: white;
+            }
+
+            &:active {
+                transform: translate(1px, 1px);
+            }
+        }
+
+        gap: 35px;
+
+        .experience-form-wrapper {
+            position: relative;
+
+            #remove-job {
+                position: absolute;
+                top: -22px;
+                right: 0;
+
+                border: 2px solid rgb(161, 84, 84);
+                background-color: transparent;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 3px;
+
+                &:hover {
+                    background-color: rgb(161, 84, 84);
+                    color: white;
+                }
+
+                &:active {
+                    transform: translate(1px, 1px);
+                }
+            }
+
+            .experience-form {
+
+                .add-duty {
+                    margin-top: 3px;
+                    border: 2px solid #787979;
+                    background-color: transparent;
+                    font-weight: 500;
+                    cursor: pointer;
+                    border-radius: 3px;
+
+                    &:hover {
+                        background-color: #787979;
+                        color: white;
+                    }
+
+                    &:active {
+                        transform: translate(1px, 1px);
+                    }
+                }
+
+                .experience-job {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 3px;
+                    margin-bottom: 3px;
+                }
+
+                .experience-duties {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 3px;
+                    justify-content: space-between;
+
+                    .duties-form-wrapper {
+                        position: relative;
+                        width: 49%;
+                        min-width: 100px;
+
+                        .duties-form {
+                            min-width: 100px;
+
+                            #duty {
+                                width: 100%;
+                                padding-right: 20px;
+                            }
+                        }
+
+                        .remove-duty {
+                            font-weight: 700;
+                            color: red;
+                            background-color: transparent;
+                            border: none;
+                            position: absolute;
+                            top: 5px;
+                            right: 3px;
+                            z-index: 2;
+                            width: auto;
+                            cursor: pointer;
+
+                            &:hover {
+                                transform: scale(1.2) translate(-.2px, .3px)
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .skills-forms {
+
+        .skills-form-inputs {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3px;
+            justify-content: space-between;
+        }
+
+        .skills-form-wrapper {
+            position: relative;
+            width: 49%;
+            min-width: 100px;
+
+            input {
+                padding-right: 20px;
+            }
+
+            .remove-skill {
+                font-weight: 700;
+                color: red;
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                top: 5px;
+                right: 3px;
+                width: auto;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.2) translate(-.2px, .3px)
+                }
+            }
+        }
+
+        .add-skill {
+            margin-top: 3px;
+            border: 2px solid #787979;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 3px;
+            width: 100px;
+
+            &:hover {
+                background-color: #787979;
+                color: white;
+            }
+
+            &:active {
+                transform: translate(1px, 1px);
+            }
+        }
+    }
+
+    .education-forms {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        #addEducation {
+            align-self: center;
+            margin-top: -10px;
+            border: 2px solid #787979;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 3px;
+            width: 130px;
+
+            &:hover {
+                background-color: #787979;
+                color: white;
+            }
+
+            &:active {
+                transform: translate(1px, 1px);
+            }
+        }
+
+        .education-form-wrapper {
+            position: relative;
+
+            .education-form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 3px;
+                margin-bottom: 3px;
+            }
+
+            #remove-education {
+                position: absolute;
+                top: -22px;
+                right: 0;
+                border: 2px solid rgb(161, 84, 84);
+                background-color: transparent;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 3px;
+                padding: 0 7px;
+
+                &:hover {
+                    background-color: rgb(161, 84, 84);
+                    color: white;
+                }
+
+                &:active {
+                    transform: translate(1px, 1px);
+                }
+            }
+        }
+    }
+}
+
+.single-form-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.single-form-wrapper {
+    position: relative;
+    width: 49%;
+    min-width: 100px;
+
+    div {
+        font-weight: 700;
+        color: red;
+        background-color: transparent;
+        border: none;
+        top: 5px;
+        right: 3px;
+        width: auto;
+        cursor: pointer;
+    }
+
+    input {
+        padding-right: 20px;
+    }
+
+    .remove {
+        font-weight: 700;
+        color: red;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 5px;
+        right: 3px;
+        width: auto;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2) translate(-.2px, .3px)
+        }
+    }
+}
+
+.add {
+    margin-top: 3px;
+    border: 2px solid #787979;
+    background-color: transparent;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 160px;
+
+    &:hover {
+        background-color: #787979;
+        color: white;
+    }
+
+    &:active {
+        transform: translate(1px, 1px);
     }
 }

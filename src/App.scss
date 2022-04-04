@@ -15,7 +15,6 @@ header {
     .experience-forms {
       display: flex;
       flex-direction: column;
-      gap: 15px;
 
       .experience-form-wrapper {
         display: flex;
@@ -23,7 +22,6 @@ header {
 
         button {
           width: 100px;
-          align-self: flex-end;
         }
       }
 

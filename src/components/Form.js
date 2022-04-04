@@ -51,32 +51,46 @@ export default function Form({ handlePrint, contactInfo, headerInfo, experienceI
             key={skill}
             removeInput={removeInput} />
     })
+
+    function changeFont(e) {
+        document.querySelector('.cv').style.fontFamily = e.target.value
+        document.querySelector('.main-left').style.fontFamily = e.target.value
+    }
+
+    const styles = {
+        display: 'none'
+    }
+
     return (
         <div className="main-left">
-            <button className="print" onClick={handlePrint} >Save PDF</button>
+            <select name="Change Font" id="" onChange={changeFont}>
+                <option value="" style={styles} >-- Change Font --</option>
+                <option value="Roboto">Roboto</option>
+                <option value="EB Garamond">EB Garamond</option>
+                <option value="Fira Sans">Fira</option>
+            </select>
+            <button className="print" onClick={handlePrint} >Preview / Save as PDF</button>
             <HeaderForm handleChange={onChange} data={headerInfo} />
-            <div className="contact-forms">
-                <ContactForm onChange={onChange} data={contactInfo} />
-            </div>
+            <ContactForm onChange={onChange} data={contactInfo} />
             <div className="experience-forms">
                 {experienceFormElements}
-                <button onClick={addInput} id='addJob'>Add Job</button>
+                <button onClick={addInput} className="add-job" id='addJob'>Add Job</button>
             </div>
             <div className="skills-forms">
-                {skillsFormElements}
-                <button onClick={addInput} id='addSkill'>Add Skill</button>
+                <div className="skills-form-inputs single-form-inputs">{skillsFormElements}</div>
+                <button onClick={addInput} id='addSkill' className='add-skill add'>Add Skill</button>
             </div>
             <div className="education-forms">
                 {educationFormElements}
                 <button onClick={addInput} id='addEducation'>Add School</button>
             </div>
             <div className="accomplishment-forms">
-                {accomplishmentFormElements}
-                <button onClick={addInput} id='addAccomplishment'>Add Accomplishment</button>
+                <div className="accomplishment-form-inputs single-form-inputs">{accomplishmentFormElements}</div>
+                <button onClick={addInput} id='addAccomplishment' className='add'>Add Accomplishment</button>
             </div>
             <div className="personal-skills-forms">
-                {personalSkillsFormElements}
-                <button onClick={addInput} id='addPersonalSkill'>Add Personal Skill</button>
+                <div className="personal-skills-inputs single-form-inputs">{personalSkillsFormElements}</div>
+                <button onClick={addInput} id='addPersonalSkill' className='add'>Add Personal Skill</button>
             </div>
 
         </div>

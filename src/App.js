@@ -69,6 +69,13 @@ function App() {
       startDate: 2004,
       endDate: 2008,
       degree: 'Bachelor of Arts in Business Communication'
+    },
+    {
+      id: nanoid(),
+      school: 'West High School',
+      startDate: 2000,
+      endDate: 2004,
+      degree: 'Tech Sciences Pathway'
     }
   ])
 
@@ -234,6 +241,7 @@ function App() {
 
   // Removes item from state based on e.target.id, states id, and map index.
   function removeInput(e, id, index) {
+    e.stopPropagation()
     e.preventDefault()
     if (e.target.id === 'remove-job') {
       setExperienceInfo(prev => {
@@ -278,10 +286,6 @@ function App() {
       })
     }
   }
-
-
-
-
 
   const componentRef = useRef()
 
