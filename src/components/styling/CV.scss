@@ -1,579 +1,446 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .main-left {
-    * {
-        font-family: inherit;
-    }
+  * {
+    font-family: inherit;
+  }
 }
 
 .print {
-    margin-top: 3px;
-    border: 2px solid #787979;
-    background-color: transparent;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 3px;
-    padding: 10px;
-    letter-spacing: 1px;
-    font-size: 1rem;
+  margin-top: 3px;
+  border: 2px solid #787979;
+  background-color: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 10px;
+  letter-spacing: 1px;
+  font-size: 1rem;
 
-    &:hover {
-        background-color: #787979;
-        color: white;
-    }
+  &:hover {
+    background-color: #787979;
+    color: white;
+  }
 
-    &:active {
-        transform: translate(1px, 1px);
-    }
+  &:active {
+    transform: translate(1px, 1px);
+  }
 }
-
 
 .remove {
-    width: 10px;
+  width: 10px;
 }
 
-
 .cv {
-    // font-family: 'Roboto';
-    height: 100vh;
+  // font-family: 'Roboto';
+  height: 100vh;
+  display: flex;
+  padding: 35px 25px 25px 25px;
+
+  .cv-left-wrapper {
     display: flex;
-    padding: 35px 25px 25px 25px;
+    border-right: 2px solid #dfe1e1;
+    padding-right: 18px;
 
-    .cv-left-wrapper {
+    .cv-left {
+      max-height: 50%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: center;
+
+      ul {
+        list-style-type: none;
+      }
+
+      .contact-section {
+        font-size: 1rem;
         display: flex;
-        border-right: 2px solid #dfe1e1;
-        padding-right: 18px;
+        flex-direction: column;
+        gap: 4px;
 
-
-        .cv-left {
-            max-height: 50%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-self: center;
-
-            ul {
-                list-style-type: none;
-            }
-
-            .contact-section {
-                font-size: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-
-                .contact {
-                    margin-bottom: 10px;
-                    letter-spacing: 2px;
-                    font-size: 1rem;
-                }
-
-                .phone-number {}
-
-                .address {}
-
-                .email {}
-
-                .website {}
-            }
-
-            .technical-skills-wrapper {
-                font-size: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-
-                .list-title {
-                    margin-bottom: 10px;
-                    letter-spacing: 2px;
-                    font-size: 1rem;
-                }
-
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-            }
-
-            .personal-skills-wrapper {
-                font-size: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-
-                .list-title {
-                    margin-bottom: 10px;
-                    letter-spacing: 2px;
-                    font-size: 1rem;
-                }
-
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-            }
+        .contact {
+          margin-bottom: 10px;
+          letter-spacing: 2px;
+          font-size: 1rem;
         }
-    }
 
-    .cv-right-wrapper {
+        .phone-number {
+        }
+
+        .address {
+        }
+
+        .email {
+        }
+
+        .website {
+        }
+      }
+
+      .technical-skills-wrapper {
+        font-size: 1rem;
         display: flex;
-        align-items: center;
-        padding: 10px 10px 10px 18px;
+        flex-direction: column;
+        gap: 4px;
 
-        .cv-right {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-
-            header {
-                padding-bottom: 30px;
-                border-bottom: 3px solid #dfe1e1;
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-
-                h3 {
-                    letter-spacing: 2px;
-                }
-
-                .name {
-                    font-size: 2.5rem;
-                    letter-spacing: 2.5px;
-                }
-
-                .title {
-                    margin-bottom: 16px;
-                    font-weight: 400;
-                    font-size: 1.1rem;
-                    letter-spacing: 2px;
-                }
-
-                .about {
-                    margin-bottom: 6px;
-                }
-
-                .header-description {
-                    line-height: 1.3;
-                }
-            }
-
-            .experience-wrapper {
-                padding-top: 30px;
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                padding-bottom: 30px;
-                border-bottom: 3px solid #dfe1e1;
-
-                h3 {
-                    letter-spacing: 2px;
-                    margin-bottom: -18px;
-                }
-
-                .experience {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-
-                    .job {
-                        font-size: 1.1rem;
-                        letter-spacing: .5px;
-                    }
-
-                    .job-info {
-                        display: flex;
-                        gap: 12px;
-                    }
-
-                    .duty-list {
-                        padding-left: 50px;
-                    }
-
-                    .dates {
-                        color: rgb(90, 88, 88);
-                    }
-                }
-            }
-
-            .education-wrapper {
-                padding-top: 30px;
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                padding-bottom: 30px;
-                border-bottom: 3px solid #dfe1e1;
-
-
-                h3 {
-                    letter-spacing: 2px;
-                    margin-bottom: -18px;
-                }
-
-                .education {
-
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-
-
-
-                    .school-info {
-                        display: flex;
-                        gap: 12px;
-                        align-items: center;
-
-                        .school-name {
-                            font-size: 1.1rem;
-                        }
-
-                        .attended {
-                            color: rgb(90, 88, 88);
-                        }
-                    }
-                }
-            }
-
-            .accomplishments-wrapper {
-                padding-top: 30px;
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-
-                .accomplishments-title {
-                    letter-spacing: 2px;
-                    margin-bottom: -18px;
-                }
-
-                .accomplishments-list {
-                    padding-left: 50px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
-                }
-
-            }
+        .list-title {
+          margin-bottom: 10px;
+          letter-spacing: 2px;
+          font-size: 1rem;
         }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+
+      .personal-skills-wrapper {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .list-title {
+          margin-bottom: 10px;
+          letter-spacing: 2px;
+          font-size: 1rem;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
     }
+  }
+
+  .cv-right-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 18px;
+
+    .cv-right {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      header {
+        padding-bottom: 30px;
+        border-bottom: 3px solid #dfe1e1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        h3 {
+          letter-spacing: 2px;
+        }
+
+        .name {
+          font-size: 2.5rem;
+          letter-spacing: 2.5px;
+        }
+
+        .title {
+          margin-bottom: 16px;
+          font-weight: 400;
+          font-size: 1.1rem;
+          letter-spacing: 2px;
+        }
+
+        .about {
+          margin-bottom: 6px;
+        }
+
+        .header-description {
+          line-height: 1.3;
+        }
+      }
+
+      .experience-wrapper {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 30px;
+        border-bottom: 3px solid #dfe1e1;
+
+        h3 {
+          letter-spacing: 2px;
+          margin-bottom: -18px;
+        }
+
+        .experience {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .job {
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+          }
+
+          .job-info {
+            display: flex;
+            gap: 12px;
+          }
+
+          .duty-list {
+            padding-left: 50px;
+          }
+
+          .dates {
+            color: rgb(90, 88, 88);
+          }
+        }
+      }
+
+      .education-wrapper {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 30px;
+        border-bottom: 3px solid #dfe1e1;
+
+        h3 {
+          letter-spacing: 2px;
+          margin-bottom: -18px;
+        }
+
+        .education {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .school-info {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            .school-name {
+              font-size: 1.1rem;
+            }
+
+            .attended {
+              color: rgb(90, 88, 88);
+            }
+          }
+        }
+      }
+
+      .accomplishments-wrapper {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .accomplishments-title {
+          letter-spacing: 2px;
+          margin-bottom: -18px;
+        }
+
+        .accomplishments-list {
+          padding-left: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    }
+  }
 }
 
 input {
-    border: 2px solid #787979;
-    padding: 3px;
-    border-radius: 3px;
-    min-width: 100px;
+  border: 2px solid #787979;
+  padding: 3px;
+  border-radius: 3px;
+  min-width: 100px;
 }
 
 .main-left {
-    height: 100vh;
-    overflow-y: auto;
-    padding: 10px 15px 10px 15px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 10px 15px 10px 15px;
 
-    select {
-        border: 2px solid #787979;
+  select {
+    border: 2px solid #787979;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+
+  .header-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+
+    input {
+      // min-width: 100px;
+      // border: 2px solid #787979;
+      // padding: 3px;
+      // border-radius: 3px;
+    }
+
+    .description {
+      grid-column-start: -3;
+      grid-column-end: -1;
+    }
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .experience-forms {
+    .add-job {
+      margin-top: -20px;
+      border: 2px solid #787979;
+      background-color: transparent;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: #787979;
+        color: white;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+
+    gap: 35px;
+
+    .experience-form-wrapper {
+      position: relative;
+
+      #remove-job {
+        position: absolute;
+        top: -22px;
+        right: 0;
+
+        border: 2px solid rgb(161, 84, 84);
+        background-color: transparent;
+        font-weight: 500;
+        cursor: pointer;
         border-radius: 3px;
-        font-size: .8rem;
-    }
 
-    .header-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 3px;
-
-        input {
-            // min-width: 100px;
-            // border: 2px solid #787979;
-            // padding: 3px;
-            // border-radius: 3px;
+        &:hover {
+          background-color: rgb(161, 84, 84);
+          color: white;
         }
 
-        .description {
-            grid-column-start: -3;
-            grid-column-end: -1;
+        &:active {
+          transform: translate(1px, 1px);
         }
-    }
+      }
 
-    .contact-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 3px;
-    }
+      .experience-form {
+        .add-duty {
+          margin-top: 3px;
+          border: 2px solid #787979;
+          background-color: transparent;
+          font-weight: 500;
+          cursor: pointer;
+          border-radius: 3px;
 
-    .experience-forms {
+          &:hover {
+            background-color: #787979;
+            color: white;
+          }
 
-        .add-job {
-            margin-top: -20px;
-            border: 2px solid #787979;
-            background-color: transparent;
-            font-weight: 500;
-            cursor: pointer;
-            border-radius: 3px;
-
-            &:hover {
-                background-color: #787979;
-                color: white;
-            }
-
-            &:active {
-                transform: translate(1px, 1px);
-            }
+          &:active {
+            transform: translate(1px, 1px);
+          }
         }
 
-        gap: 35px;
-
-        .experience-form-wrapper {
-            position: relative;
-
-            #remove-job {
-                position: absolute;
-                top: -22px;
-                right: 0;
-
-                border: 2px solid rgb(161, 84, 84);
-                background-color: transparent;
-                font-weight: 500;
-                cursor: pointer;
-                border-radius: 3px;
-
-                &:hover {
-                    background-color: rgb(161, 84, 84);
-                    color: white;
-                }
-
-                &:active {
-                    transform: translate(1px, 1px);
-                }
-            }
-
-            .experience-form {
-
-                .add-duty {
-                    margin-top: 3px;
-                    border: 2px solid #787979;
-                    background-color: transparent;
-                    font-weight: 500;
-                    cursor: pointer;
-                    border-radius: 3px;
-
-                    &:hover {
-                        background-color: #787979;
-                        color: white;
-                    }
-
-                    &:active {
-                        transform: translate(1px, 1px);
-                    }
-                }
-
-                .experience-job {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: 1fr 1fr;
-                    gap: 3px;
-                    margin-bottom: 3px;
-                }
-
-                .experience-duties {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    gap: 3px;
-                    justify-content: space-between;
-
-                    .duties-form-wrapper {
-                        position: relative;
-                        width: 49%;
-                        min-width: 100px;
-
-                        .duties-form {
-                            min-width: 100px;
-
-                            #duty {
-                                width: 100%;
-                                padding-right: 20px;
-                            }
-                        }
-
-                        .remove-duty {
-                            font-weight: 700;
-                            color: red;
-                            background-color: transparent;
-                            border: none;
-                            position: absolute;
-                            top: 5px;
-                            right: 3px;
-                            z-index: 2;
-                            width: auto;
-                            cursor: pointer;
-
-                            &:hover {
-                                transform: scale(1.2) translate(-.2px, .3px)
-                            }
-
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .skills-forms {
-
-        .skills-form-inputs {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 3px;
-            justify-content: space-between;
+        .experience-job {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 3px;
+          margin-bottom: 3px;
         }
 
-        .skills-form-wrapper {
+        .experience-duties {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 3px;
+          justify-content: space-between;
+
+          .duties-form-wrapper {
             position: relative;
             width: 49%;
             min-width: 100px;
 
-            input {
+            .duties-form {
+              min-width: 100px;
+
+              #duty {
+                width: 100%;
                 padding-right: 20px;
+              }
             }
 
-            .remove-skill {
-                font-weight: 700;
-                color: red;
-                background-color: transparent;
-                border: none;
-                position: absolute;
-                top: 5px;
-                right: 3px;
-                width: auto;
-                cursor: pointer;
+            .remove-duty {
+              font-weight: 700;
+              color: red;
+              background-color: transparent;
+              border: none;
+              position: absolute;
+              top: 5px;
+              right: 3px;
+              z-index: 2;
+              width: auto;
+              cursor: pointer;
 
-                &:hover {
-                    transform: scale(1.2) translate(-.2px, .3px)
-                }
+              &:hover {
+                transform: scale(1.2) translate(-0.2px, 0.3px);
+              }
             }
+          }
         }
+      }
+    }
+  }
 
-        .add-skill {
-            margin-top: 3px;
-            border: 2px solid #787979;
-            background-color: transparent;
-            font-weight: 500;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 100px;
-
-            &:hover {
-                background-color: #787979;
-                color: white;
-            }
-
-            &:active {
-                transform: translate(1px, 1px);
-            }
-        }
+  .skills-forms {
+    .skills-form-inputs {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 3px;
+      justify-content: space-between;
     }
 
-    .education-forms {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
+    .skills-form-wrapper {
+      position: relative;
+      width: 49%;
+      min-width: 100px;
 
-        #addEducation {
-            align-self: center;
-            margin-top: -10px;
-            border: 2px solid #787979;
-            background-color: transparent;
-            font-weight: 500;
-            cursor: pointer;
-            border-radius: 3px;
-            width: 130px;
-
-            &:hover {
-                background-color: #787979;
-                color: white;
-            }
-
-            &:active {
-                transform: translate(1px, 1px);
-            }
-        }
-
-        .education-form-wrapper {
-            position: relative;
-
-            .education-form {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-                gap: 3px;
-                margin-bottom: 3px;
-            }
-
-            #remove-education {
-                position: absolute;
-                top: -22px;
-                right: 0;
-                border: 2px solid rgb(161, 84, 84);
-                background-color: transparent;
-                font-weight: 500;
-                cursor: pointer;
-                border-radius: 3px;
-                padding: 0 7px;
-
-                &:hover {
-                    background-color: rgb(161, 84, 84);
-                    color: white;
-                }
-
-                &:active {
-                    transform: translate(1px, 1px);
-                }
-            }
-        }
-    }
-}
-
-.single-form-inputs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3px;
-    justify-content: space-between;
-}
-
-.single-form-wrapper {
-    position: relative;
-    width: 49%;
-    min-width: 100px;
-
-    div {
-        font-weight: 700;
-        color: red;
-        background-color: transparent;
-        border: none;
-        top: 5px;
-        right: 3px;
-        width: auto;
-        cursor: pointer;
-    }
-
-    input {
+      input {
         padding-right: 20px;
-    }
+      }
 
-    .remove {
+      .remove-skill {
         font-weight: 700;
         color: red;
         background-color: transparent;
@@ -585,26 +452,151 @@ input {
         cursor: pointer;
 
         &:hover {
-            transform: scale(1.2) translate(-.2px, .3px)
+          transform: scale(1.2) translate(-0.2px, 0.3px);
         }
+      }
     }
+
+    .add-skill {
+      margin-top: 3px;
+      border: 2px solid #787979;
+      background-color: transparent;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 3px;
+      width: 100px;
+
+      &:hover {
+        background-color: #787979;
+        color: white;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+  }
+
+  .education-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    #addEducation {
+      align-self: center;
+      margin-top: -10px;
+      border: 2px solid #787979;
+      background-color: transparent;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 3px;
+      width: 130px;
+
+      &:hover {
+        background-color: #787979;
+        color: white;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+      }
+    }
+
+    .education-form-wrapper {
+      position: relative;
+
+      .education-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 3px;
+        margin-bottom: 3px;
+      }
+
+      #remove-education {
+        position: absolute;
+        top: -22px;
+        right: 0;
+        border: 2px solid rgb(161, 84, 84);
+        background-color: transparent;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: 0 7px;
+
+        &:hover {
+          background-color: rgb(161, 84, 84);
+          color: white;
+        }
+
+        &:active {
+          transform: translate(1px, 1px);
+        }
+      }
+    }
+  }
+}
+
+.single-form-inputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: space-between;
+}
+
+.single-form-wrapper {
+  position: relative;
+  width: 49%;
+  min-width: 100px;
+
+  div {
+    font-weight: 700;
+    color: red;
+    background-color: transparent;
+    border: none;
+    top: 5px;
+    right: 3px;
+    width: auto;
+    cursor: pointer;
+  }
+
+  input {
+    padding-right: 20px;
+  }
+
+  .remove {
+    font-weight: 700;
+    color: red;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    width: auto;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2) translate(-0.2px, 0.3px);
+    }
+  }
 }
 
 .add {
-    margin-top: 3px;
-    border: 2px solid #787979;
-    background-color: transparent;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 3px;
-    width: 160px;
+  margin-top: 3px;
+  border: 2px solid #787979;
+  background-color: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 160px;
 
-    &:hover {
-        background-color: #787979;
-        color: white;
-    }
+  &:hover {
+    background-color: #787979;
+    color: white;
+  }
 
-    &:active {
-        transform: translate(1px, 1px);
-    }
+  &:active {
+    transform: translate(1px, 1px);
+  }
 }
