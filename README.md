@@ -1,4 +1,4 @@
-# [Resume Builder: Click to get started.](https://zacherymorgan.github.io/resume-builder/)
+# [Resume Builder: Click to get started.](https://zacherymorgan.github.io/Resume-Builder/)
 
 ## Built with
 - React
